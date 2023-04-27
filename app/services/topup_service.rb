@@ -17,11 +17,11 @@ class TopupService
     JSON.parse(response.body) if response.status == 201
   end
 
-  # def fetch_topup(authorization, id)
-  #   response = @conn.get do |req|
-  #     req.url "/api/v1/top_ups/#{id}"
-  #     req.headers["Authorization"] = authorization
-  #   end
-  #   JSON.parse(response.body)
-  # end
+  def fetch_user(authorization, id)
+    response = @conn.get do |req|
+      req.url "/api/v1/users/#{id}"
+      req.headers["Authorization"] = authorization
+    end
+    JSON.parse(response.body)["user"]
+  end
 end
