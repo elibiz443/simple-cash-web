@@ -21,9 +21,16 @@
   </head>
 
   <body class="bg-gray-50 dark:bg-slate-900">
-    <%= render "shared/header" %>
-      <%= yield %>
-    <%= render "shared/footer" %>
-    <script src="https://cdn.jsdelivr.net/npm/@preline/preline@1.0.0/dist/hs-ui.bundle.min.js"></script>
+    <% if current_user %>
+      <%= render "shared/customer_header" %>
+        <%= render "shared/side_bar" %>
+        <%= yield %>
+      <%= render "shared/customer_footer" %>
+    <% else %>
+      <%= render "shared/header" %>
+        <%= yield %>
+      <%= render "shared/footer" %>
+    <% end %>
+    <script src="/assets/preline.js"></script>
   </body>
 </html>
