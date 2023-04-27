@@ -17,7 +17,6 @@ class TopUpsController < ApplicationController
     @balance = user["balance"]
   end
 
-  
   private
 
   def top_up_params
