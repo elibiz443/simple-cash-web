@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :transactions
   resources :reports
   resources :notifications
+  get "profile", to: "home#profile"
 
   root "home#index"
 end

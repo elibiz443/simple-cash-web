@@ -1,0 +1,27 @@
+<!-- Content -->
+<div class="w-full pt-10 px-4 sm:px-6 md:px-8 lg:pl-72">
+  <h4 class="block text-lg font-bold text-gray-800 sm:text-xl dark:text-white text-center mb-4">Profile</h4>
+  <div class="bg-gray-200 w-3/4 mx-auto px-10 py-12 rounded-lg lg:flex lg:gap-20">
+    <div class="mb-6 lg:mb-0">
+      <h4 class="text-lg">
+        <%= image_tag "img_avatar.png", class: "nline-block h-[6rem] w-[6rem] rounded-full ring-2 ring-white dark:ring-gray-800" %>
+      </h4>
+    </div>
+    <div>
+      <h4 class="text-gray-800 text-lg">
+        <span class="font-bold">Full Name:</span>
+        <span class="font-thin"><%= current_user[:first_name] %></span>
+        <span class="font-thin"><%= current_user[:last_name] %></span>
+      </h4>
+      <h4 class="text-gray-800 text-lg">
+        <span class="font-bold">Phone Numbe:</span>
+        <span class="font-thin"><%= current_user[:phone_number] %></span>
+      </h4>
+      <h4 class="text-gray-800 text-lg">
+        <span class="font-bold">Email:</span>
+        <span class="font-thin"><%= current_user[:email] %></span>
+      </h4>
+    </div>
+  </div>
+</div>
+<!-- End Content -->
