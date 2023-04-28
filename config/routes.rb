@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post "signup", to: "registrations#create"
   delete "logout", to: "sessions#destroy"
 
-  get "home/index"
+  get "home", to: "home#index"
   get "dashboard", to: "dashboard#index"
   resources :top_ups
   get "wallet", to: "top_ups#show"
