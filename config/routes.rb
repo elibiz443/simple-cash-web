@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :top_ups
   get "wallet", to: "top_ups#show"
   resources :transactions
+  resources :reports
 
   root "home#index"
 end
