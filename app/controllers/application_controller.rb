@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     if (controller_name == "dashboard") 
       redirect_to "/signin" unless current_user
-    elsif (controller_name == "home") 
+    elsif (controller_name == "home") && (action_name != "profile") 
       redirect_to "/dashboard" if current_user
     end
   end
