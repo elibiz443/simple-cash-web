@@ -1,0 +1,16 @@
+<!-- Content -->
+<div class="w-full pt-10 px-4 sm:px-6 md:px-8 lg:pl-72">
+  <h4 class="block text-lg font-bold text-gray-800 sm:text-xl dark:text-white text-center mb-2">Notification</h4>
+  <div class="my-4 bg-gray-200 w-3/4 mx-auto px-10 py-12 rounded-lg text-center">
+    <div class="text-right text-gray-500 text-md mb-5 border-b-2 border-gray-300 pb-2">
+      <span>Date Received:</span>
+      <span><%= Time.parse(@notification["created_at"]).strftime("%Y-%m-%d %H:%M") %></span>
+    </div>
+    <h5 class="text-lg">
+      <span class="text-gray-800">
+        <%= @notification["detail"] %>
+      </span>
+    </h5>
+  </div>
+</div>
+<!-- End Content -->

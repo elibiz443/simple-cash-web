@@ -17,4 +17,12 @@ class SessionService
     end
     JSON.parse(response.body) if response.status == 201
   end
+
+  def fetch_user(authorization, id)
+    response = @conn.get do |req|
+      req.url "/api/v1/users/#{id}"
+      req.headers["Authorization"] = authorization
+    end
+    JSON.parse(response.body)["user"]
+  end
 end

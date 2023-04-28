@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "wallet", to: "top_ups#show"
   resources :transactions
   resources :reports
+  resources :notifications
 
   root "home#index"
 end
