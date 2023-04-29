@@ -9,4 +9,8 @@ This is the front end to simple-cash API.
 * inline_svg gem
 * faraday
 
+Check it out:
+
+https://cashwebsite.herokuapp.com
+
 ###### Happy Coding 🙌
