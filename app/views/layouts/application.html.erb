@@ -3,6 +3,7 @@
   <head>
     <title>SimpleCashWeb</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
@@ -20,7 +21,7 @@
     <%= favicon_link_tag "favicon.png" %>
   </head>
 
-  <body class="bg-gray-50 dark:bg-slate-900 font-['ubuntu']">
+  <body class="bg-gray-200 max-w-full overflow-x-hidden font-['ubuntu']">
     <% if current_user %>
       <%= render "shared/customer_header" %>
         <%= render "shared/side_bar" %>
@@ -30,6 +31,5 @@
         <%= yield %>
       <%= render "shared/footer" %>
     <% end %>
-    <%= javascript_include_tag "preline" %>
   </body>
 </html>

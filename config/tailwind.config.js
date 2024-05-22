@@ -2,11 +2,13 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: [
-    './public/*.html',
+    './app/views/**/*.html.erb',
     './app/helpers/**/*.rb',
-    './app/javascript/**/*.js',
-    './app/views/**/*.{erb,haml,html,slim}',
-    'node_modules/preline/dist/*.js',
+    './app/assets/stylesheets/**/*.css',
+    './app/javascript/**/*.js'
+  ],
+  plugins: [
+    require('preline/plugin'),
   ],
   theme: {
     extend: {
@@ -15,11 +17,4 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/container-queries'),
-    require('preline/plugin'),
-  ]
 }
