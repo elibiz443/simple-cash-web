@@ -11,6 +11,6 @@ This is the front end to simple-cash API.
 
 Check it out:
 
-https://cashwebsite.herokuapp.com
+https://simple-cash-web-31f7afb5c81d.herokuapp.com
 
 ###### Happy Coding 🙌
