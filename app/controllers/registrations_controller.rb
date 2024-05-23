@@ -16,7 +16,7 @@ class RegistrationsController < ApplicationController
 
       redirect_to "/dashboard", notice: @user["message"]
     else
-      redirect_to "/signup", alert: "Error registering. Confirm details and try again ❌"
+      redirect_to "/signup", alert: @created_user['errors'].join(', ')
     end
   end
 
