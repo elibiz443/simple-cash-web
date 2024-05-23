@@ -1,9 +1,9 @@
-<main class="w-full max-w-md mx-auto p-6">
-  <div class="mt-7 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
+<main class="w-5/6 md:w-3/4 lg:w-1/2 xl:w-[40%] mx-auto p-6">
+  <div class="mt-7 bg-white border border-gray-400 rounded-xl shadow-md shadow-slate-400">
     <div class="p-4 sm:p-7">
       <div class="text-center">
-        <h1 class="block text-2xl font-bold text-gray-800 dark:text-white">Sign in</h1>
-        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+        <h1 class="block text-2xl font-bold text-gray-800">Sign in</h1>
+        <p class="mt-2 text-sm text-gray-600">
           Don't have an account?
           <a class="text-blue-600 decoration-2 hover:underline font-medium" href="/signup">
             Sign up here
@@ -23,23 +23,21 @@
 
             <!-- Form Group -->
             <div>
-              <label for="email" class="block text-sm mb-2 dark:text-white">Email</label>
               <div class="relative">
-                <%= f.email_field :email, autofocus: false, autocomplete: "off", class: "py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400" %>
+                <%= f.email_field :email, autofocus: false, autocomplete: "off", class: "py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm outline-none focus:border-gray-500 focus:ring-gray-500", placeholder: "Email Address" %>
               </div>
             </div>
             <!-- End Form Group -->
 
             <!-- Form Group -->
             <div>
-              <label for="password" class="block text-sm mb-2 dark:text-white">Password</label>
               <div class="relative">
-                <%= f.password_field :password, id: "password", autocomplete: "new-password", class: "py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400" %>
+                <%= f.password_field :password, id: "password", autocomplete: "new-password", class: "py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm outline-none focus:border-gray-500 focus:ring-gray-500", placeholder: "Password" %>
               </div>
             </div>
             <!-- End Form Group -->
 
-            <button type="submit" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800 mt-10">Sign In</button>
+            <button type="submit" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm mt-10">Sign In</button>
           </div>
         <% end %>
         <!-- End Form -->
