@@ -1,4 +1,4 @@
-<main class="w-full max-w-md mx-auto p-6">
+<main class="w-5/6 md:w-3/4 lg:w-1/2 mx-auto p-6">
   <div class="mt-7 bg-white border border-gray-200 rounded-xl shadow-sm">
     <div class="p-4 sm:p-7">
       <div class="text-center">
@@ -21,62 +21,59 @@
               </div>
             <% end %>
 
+            <div class="grid md:grid-cols-2 gap-2">
+              <!-- Form Group -->
+              <div>
+                <div class="relative">
+                  <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm outline-none focus:border-gray-500 focus:ring-gray-500", placeholder: "First Name" %>
+                </div>
+              </div>
+              <!-- End Form Group -->
+              <!-- Form Group -->
+              <div>
+                <div class="relative">
+                  <%= f.text_field :last_name, autocomplete: "last_name", class: "py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm outline-none focus:border-gray-500 focus:ring-gray-500", placeholder: "Last Name" %>
+                </div>
+              </div>
+              <!-- End Form Group -->
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-2">
+              <!-- Form Group -->
+              <div>
+                <div class="relative">
+                  <%= f.email_field :email, autocomplete: "email", class: "py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm outline-none focus:border-gray-500 focus:ring-gray-500", placeholder: "Email Address" %>
+                </div>
+              </div>
+              <!-- End Form Group -->
+
+              <!-- Form Group -->
+              <div>
+                <div class="relative">
+                  <%= f.text_field :phone_number, autocomplete: "phone_number", class: "py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm outline-none focus:border-gray-500 focus:ring-gray-500", placeholder: "Phone Number" %>
+                </div>
+              </div>
+              <!-- End Form Group -->
+            </div>
+
             <!-- Form Group -->
             <div>
-              <label for="first_name" class="block text-sm mb-2">First Name</label>
               <div class="relative">
-                <%= f.text_field :first_name, autofocus: false, autocomplete: "first_name", class: "py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400" %>
+                <%= f.password_field :password, id: "password", autocomplete: "new-password", class: "py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm outline-none focus:border-gray-500 focus:ring-gray-500", placeholder: "Password" %>
               </div>
             </div>
             <!-- End Form Group -->
 
             <!-- Form Group -->
             <div>
-              <label for="last_name" class="block text-sm mb-2 dark:text-white">Last Name</label>
               <div class="relative">
-                <%= f.text_field :last_name, autofocus: false, autocomplete: "last_name", class: "py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400" %>
-              </div>
-            </div>
-            <!-- End Form Group -->
-
-            <!-- Form Group -->
-            <div>
-              <label for="email" class="block text-sm mb-2 dark:text-white">Email</label>
-              <div class="relative">
-                <%= f.email_field :email, autofocus: false, autocomplete: "email", class: "py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400" %>
-              </div>
-            </div>
-            <!-- End Form Group -->
-
-            <!-- Form Group -->
-            <div>
-              <label for="phone_number" class="block text-sm mb-2 dark:text-white">Phone Number</label>
-              <div class="relative">
-                <%= f.text_field :phone_number, autofocus: false, autocomplete: "phone_number", class: "py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400" %>
-              </div>
-            </div>
-            <!-- End Form Group -->
-
-            <!-- Form Group -->
-            <div>
-              <label for="password" class="block text-sm mb-2 dark:text-white">Password</label>
-              <div class="relative">
-                <%= f.password_field :password, id: "password", autocomplete: "new-password", class: "py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400" %>
-              </div>
-            </div>
-            <!-- End Form Group -->
-
-            <!-- Form Group -->
-            <div>
-              <label for="confirm-password" class="block text-sm mb-2 dark:text-white">Confirm Password</label>
-              <div class="relative">
-                <%= f.password_field :password_confirmation, id: "confirm-password", autocomplete: "new-password", class: "py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400" %>
+                <%= f.password_field :password_confirmation, id: "confirm-password", autocomplete: "new-password", class: "py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm outline-none focus:border-gray-500 focus:ring-gray-500", placeholder: "Confirm Password" %>
                 </div>
               </div>
             </div>
             <!-- End Form Group -->
 
-            <button type="submit" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800 mt-10">Sign up</button>
+            <button type="submit" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm mt-10">Sign up</button>
           </div>
         <% end %>
         <!-- End Form -->
