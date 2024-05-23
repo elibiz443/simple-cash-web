@@ -15,6 +15,6 @@ class RegistrationService
       req.headers["Content-Type"] = "application/json"
       req.body = sign_up_params.to_json
     end
-    JSON.parse(response.body) if response.status == 201
+    JSON.parse(response.body)
   end
 end

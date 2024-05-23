@@ -1,29 +1,47 @@
 class RegistrationsController < ApplicationController
   def create
     signup_api_client = RegistrationService.new
-    @created_user = signup_api_client.send_form_data(sign_up_params)
-    if @created_user
-      signin_api_client = SessionService.new
-      @user = signin_api_client.send_form_data(sign_in_params)
+    response = signup_api_client.send_form_data(sign_up_params)
+    
+    if response
+      @created_user = response["user"]
+      if @created_user
+        signin_api_client = SessionService.new
+        @user = signin_api_client.send_form_data(sign_in_params)
 
-      session[:user_id] = @user["user"]["id"]
-      session[:user_email] = @user["user"]["email"]
-      session[:user_phone_number] = @user["user"]["phone_number"]
-      session[:user_first_name] = @user["user"]["first_name"]
-      session[:user_last_name] = @user["user"]["last_name"]
-      session[:user_balance] = @user["user"]["balance"]
-      session[:user_token] = @user["token"]
+        if @user
+          session[:user_id] = @user["user"]["id"]
+          session[:user_email] = @user["user"]["email"]
+          session[:user_phone_number] = @user["user"]["phone_number"]
+          session[:user_first_name] = @user["user"]["first_name"]
+          session[:user_last_name] = @user["user"]["last_name"]
+          session[:user_balance] = @user["user"]["balance"]
+          session[:user_token] = @user["token"]
 
-      redirect_to "/dashboard", notice: @user["message"]
+          redirect_to "/dashboard", notice: @user["message"]
+        else
+          flash[:alert] = "Sign in failed. Please try again."
+          redirect_to "/signin"
+        end
+      else
+        if (response["errors"]).uniq! == nil
+          error = response["errors"]
+        else
+          error = (response["errors"]).uniq!
+        end
+        flash[:alert] = error.join(', ')
+        redirect_to "/signup"
+      end
     else
-      redirect_to "/signup", alert: @created_user['errors'].join(', ')
+      flash[:alert] = "Registration failed. Please try again."
+      redirect_to "/signup"
     end
   end
 
   private
 
   def sign_in_params
-    {email: params[:email], password: params[:password]}
+    { email: params[:email], password: params[:password] }
   end
 
   def sign_up_params
