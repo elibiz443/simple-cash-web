@@ -24,7 +24,7 @@
             <!-- Form Group -->
             <div>
               <div class="relative">
-                <%= f.email_field :email, autofocus: false, autocomplete: "off", class: "py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm outline-none focus:border-gray-500 focus:ring-gray-500", placeholder: "Email Address" %>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm outline-none focus:border-gray-500 focus:ring-gray-500", placeholder: "Email Address" %>
               </div>
             </div>
             <!-- End Form Group -->
@@ -32,7 +32,7 @@
             <!-- Form Group -->
             <div>
               <div class="relative">
-                <%= f.password_field :password, id: "password", autocomplete: "new-password", class: "py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm outline-none focus:border-gray-500 focus:ring-gray-500", placeholder: "Password" %>
+                <%= f.password_field :password, class: "py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm outline-none focus:border-gray-500 focus:ring-gray-500", placeholder: "Password" %>
               </div>
             </div>
             <!-- End Form Group -->
