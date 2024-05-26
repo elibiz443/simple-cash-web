@@ -4,6 +4,8 @@ class TopupService
   def initialize
     @conn = Faraday.new(url: API_BASE_URL) do |faraday|
       faraday.adapter Faraday.default_adapter
+      faraday.request :url_encoded
+      faraday.response :logger
     end
   end
 
@@ -14,7 +16,7 @@ class TopupService
       req.headers["Authorization"] = authorization
       req.body = top_up_params.to_json
     end
-    JSON.parse(response.body) if response.status == 201
+    JSON.parse(response.body)
   end
 
   def fetch_user(authorization, id)

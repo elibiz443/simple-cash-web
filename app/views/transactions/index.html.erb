@@ -10,12 +10,10 @@
     <% end %>
     <div class="mx-auto max-w-2xl sm:flex sm:space-x-3 p-3 bg-white border rounded-lg shadow-lg shadow-gray-100">
       <div class="pb-2 sm:pb-0 sm:flex-[1_0_0%]">
-        <label for="hs-hero-name-1" class="block text-sm font-medium"><span class="sr-only">Amount To Transfer (In Ksh)</span></label>
-        <%= f.number_field :amount, autofocus: false, autocomplete: "off", class: "py-3 px-4 block w-full border-transparent rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 sm:p-4", placeholder: "Amount To Transfer (In Ksh)" %>
+        <%= f.number_field :amount, autofocus: false, autocomplete: "off", class: "py-3 px-4 block w-full border-transparent rounded-md text-sm outline-none border-2  focus:border-gray-500 focus:ring-gray-500 sm:p-4", placeholder: "Amount To Transfer" %>
       </div>
       <div class="pt-2 sm:pt-0 sm:pl-3 border-t border-gray-200 sm:border-t-0 sm:border-l sm:flex-[1_0_0%]">
-        <label for="hs-hero-email-1" class="block text-sm font-medium"><span class="sr-only">Phone Number/Email</span></label>
-        <%= f.text_field :phone_number_or_email, autofocus: false, autocomplete: "off", class: "py-3 px-4 block w-full border-transparent rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 sm:p-4", placeholder: "Phone Number/Email" %>
+        <%= f.text_field :phone_number_or_email, autofocus: false, autocomplete: "off", class: "py-3 px-4 block w-full border-transparent rounded-md text-sm outline-none border-2  focus:border-gray-500 focus:ring-gray-500 sm:p-4", placeholder: "Phone Number/Email" %>
       </div>
       <div class="pt-2 sm:pt-0 grid sm:block sm:flex-[0_0_auto]">
         <button type="submit" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm sm:p-4">
