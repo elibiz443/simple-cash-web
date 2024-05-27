@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "home", to: "home#index"
   get "dashboard", to: "dashboard#index"
   resources :top_ups
-  get "wallet", to: "top_ups#show"
+  get "wallet", to: "wallets#index"
   resources :transactions
   resources :reports
   resources :notifications
