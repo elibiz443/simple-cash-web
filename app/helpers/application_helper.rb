@@ -9,7 +9,6 @@ module ApplicationHelper
         phone_number: session[:user_phone_number],
         first_name: session[:user_first_name],
         last_name: session[:user_last_name],
-        balance: session[:user_balance],
         token: session[:user_token]
       }
     end

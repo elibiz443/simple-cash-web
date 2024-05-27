@@ -11,7 +11,6 @@ class SessionsController < ApplicationController
       session[:user_phone_number] = @user["user"]["phone_number"]
       session[:user_first_name] = @user["user"]["first_name"]
       session[:user_last_name] = @user["user"]["last_name"]
-      session[:user_balance] = @user["user"]["balance"]
       session[:user_token] = @user["token"]
 
       redirect_to "/dashboard", notice: @user["message"]

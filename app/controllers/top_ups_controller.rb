@@ -15,13 +15,6 @@ class TopUpsController < ApplicationController
     end
   end
 
-  def show
-    authorization = current_user[:token]
-    id = current_user[:id]
-    user = TopupService.new.fetch_user(authorization, id)
-    @balance = user["balance"]
-  end
-
   private
 
   def top_up_params
