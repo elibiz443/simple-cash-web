@@ -14,6 +14,6 @@ class TransactionService
       req.headers["Authorization"] = authorization
       req.body = transaction_params.to_json
     end
-    JSON.parse(response.body) if response.status == 201
+    JSON.parse(response.body)
   end
 end

@@ -1,6 +1,6 @@
 <!-- Content -->
-<div class="w-full pt-10 px-4 sm:px-6 md:px-8 lg:pl-72">
-  <h1 class="block text-2xl font-bold text-gray-800 sm:text-3xl text-center mb-12">Transfer Money!</h1>
+<div class="w-full pt-10 px-4 lg:px-6 md:px-8 lg:pl-72">
+  <h1 class="block text-2xl font-bold text-gray-800 lg:text-3xl text-center mb-12">Transfer Money!</h1>
   <!-- Form -->
   <%= form_with(model: @transaction, url: transactions_path) do |f| %>
     <% flash.each do |type, msg| %>
@@ -8,15 +8,19 @@
         <%= content_tag :div, msg, class: build_alert_classes(type) %>
       </div>
     <% end %>
-    <div class="mx-auto max-w-2xl sm:flex sm:space-x-3 p-3 bg-white border rounded-lg shadow-lg shadow-gray-100">
-      <div class="pb-2 sm:pb-0 sm:flex-[1_0_0%]">
-        <%= f.number_field :amount, autofocus: false, autocomplete: "off", class: "py-3 px-4 block w-full border-transparent rounded-md text-sm outline-none border-2  focus:border-gray-500 focus:ring-gray-500 sm:p-4", placeholder: "Amount To Transfer" %>
+    <div class="mx-auto w-5/6 xl:w-[95%] xl:flex xl:space-x-3 p-3 bg-white border rounded-lg shadow-lg shadow-gray-100">
+      <div class="pb-2 xl:pb-0 xl:flex-[1_0_0%]">
+        <%= f.number_field :amount, autofocus: false, autocomplete: "off", class: "py-3 px-4 block w-full border-transparent rounded-md text-sm outline-none border-2  focus:border-gray-500 focus:ring-gray-500 lg:p-4", placeholder: "Amount" %>
       </div>
-      <div class="pt-2 sm:pt-0 sm:pl-3 border-t border-gray-200 sm:border-t-0 sm:border-l sm:flex-[1_0_0%]">
-        <%= f.text_field :phone_number_or_email, autofocus: false, autocomplete: "off", class: "py-3 px-4 block w-full border-transparent rounded-md text-sm outline-none border-2  focus:border-gray-500 focus:ring-gray-500 sm:p-4", placeholder: "Phone Number/Email" %>
+      <div class="pt-2 xl:pt-0 xl:pl-3 border-t border-gray-200 xl:border-t-0 xl:border-l xl:flex-[1_0_0%]">
+        <%= f.select :currency, CurrencyService.new.currencies, { prompt: "Select Currency" }, { autofocus: false, autocomplete: "off", class: "py-3 px-4 block w-full border-transparent rounded-md text-sm outline-none border-2  focus:border-gray-500 focus:ring-gray-500 xl:p-4" } %>
       </div>
-      <div class="pt-2 sm:pt-0 grid sm:block sm:flex-[0_0_auto]">
-        <button type="submit" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm sm:p-4">
+      <div class="pt-2 xl:pt-0 xl:pl-3 border-t border-gray-200 xl:border-t-0 xl:border-l xl:flex-[1_0_0%]">
+        <%= f.text_field :phone_number_or_email, autofocus: false, autocomplete: "off", class: "py-3 px-4 block w-full border-transparent rounded-md text-sm outline-none border-2  focus:border-gray-500 focus:ring-gray-500 xl:p-4", placeholder: "Phone Number/Email" %>
+      </div>
+      <%= f.hidden_field :user_id, value: current_user[:id] %>
+      <div class="pt-2 xl:pt-0 grid xl:block xl:flex-[0_0_auto]">
+        <button type="submit" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm xl:p-4">
           Send Money!
         </button>
       </div>
